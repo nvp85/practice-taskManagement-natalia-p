@@ -1,15 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { tasks } from "./TaskList";
 
 const TaskDetail = () => {
     const { taskId } = useParams();
-    console.log(tasks);
-    console.log(taskId);
-
+    const task = tasks.find(task => task.id == taskId);
     return (
         <div id="task-container">
-            <h3>{tasks[taskId].title}</h3>
-            <p>{tasks[taskId].description}</p>
+            <h3>{task.title}</h3>
+            <p>{task.description}</p>
+            <Link to="/tasks">Back to the task list</Link>
         </div>
     )
 }

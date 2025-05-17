@@ -9,9 +9,12 @@ export const tasks = [
     
 const TaskList = () => {
     return (
-        <ol>
-            {tasks.map((task) => <li key={task.id}><Link to={`${task.id}`}>{task.title}</Link></li>)}
-        </ol>
+        <div>
+            <h2>ToDo list</h2>
+            <ol>
+                {tasks.map((task) => <li key={task.id}><Link to={`${task.id}`}>{task.title}</Link></li>)}
+            </ol>
+        </div>
     )
 }
 
